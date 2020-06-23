@@ -1,0 +1,23 @@
+<h1>saludar.component.html</h1>
+<!--Condicional numeros de registros permitidos
+*ngIf="nombres.length < 5"-->
+<div [ngSwitch]="nombres.length">
+    <div>
+        <input type="text"[(ngModel)]="nombreLista">
+        <br>
+        <button (click)="onButtonClick()">Añadir un nombre</button>
+        <br>
+    </div>
+    
+    <div *ngSwitchCase="1"> 
+        <p>Uno</p>
+    </div>
+    <div *ngSwitchCase="3"> 
+        <p>Tres</p>
+    </div>
+</div>
+<!--Ciclo que recorre todo el arreglo-->
+<p *ngFor="let item of nombres; index as i">
+    {{i}}.- Hola Bestia del Gym {{item}}
+</p>
+<br>
